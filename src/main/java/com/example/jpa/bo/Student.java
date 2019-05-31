@@ -3,6 +3,7 @@ package com.example.jpa.bo;
 import javax.persistence.*;
 import java.util.List;
 
+
 @Entity
 public class Student {
 

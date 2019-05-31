@@ -13,7 +13,12 @@ public class Subject {
         this.name = name;
     }
 
+    protected  Subject() {
+
+    }
+
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn
     private Student student;
 
     public Long getSubjectId() {

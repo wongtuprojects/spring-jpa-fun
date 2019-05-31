@@ -40,11 +40,14 @@ public class JpaApplication {
            //delete all operations
            studentRepository.deleteAll();
            //test for students with subject
+           Student student1 = new Student("John", "Smith");
            Subject subject1= new Subject("History");
+           subject1.setStudent(student1);
            List<Subject> subjectList = new ArrayList<>();
+           //in hibernate this is mandatory to save the ids in children
            subjectList.add(subject1);
-           Student student1 = new Student("John", "Smith", subjectList);
 
+           student1.setSubject(subjectList);
            studentRepository.save(student1);
 
            log.info("Repo size is:" + studentRepository.count());
